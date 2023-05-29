@@ -1,0 +1,6 @@
+.draggable {
+  position: absolute;
+  width: auto;
+  padding: 50px;
+  z-index: 1000;
+}

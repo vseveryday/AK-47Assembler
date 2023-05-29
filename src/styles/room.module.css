@@ -1,0 +1,5 @@
+.room {
+  height: 100vh;
+  background: no-repeat url(/img/gunsfriend-2.webp);
+  background-size: cover;
+}
