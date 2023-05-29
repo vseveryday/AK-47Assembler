@@ -13,7 +13,7 @@
   width: 100%;
   height: 63vh;
   content: "";
-  background: url("/img/Gun_Wall1_F.N.G._COD4.webp");
+  /* background: url("/img/Gun_Wall1_F.N.G._COD4.webp"); */
   background-size: cover;
   background-position: center;
   filter: blur(15px) grayscale(50%);
