@@ -1,122 +1,121 @@
-import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
-import { DndContext } from "@dnd-kit/core";
-import { Droppable } from "@/components/Droppable";
-import { DraggableSutter } from "@/components/DraggableSutter";
-import Image from "next/image";
-import box from "@/assets/box.png";
-import withZatvor from "@/assets/withZatvor.png";
-import withMagazine from "@/assets/withMagazine.png";
-import withSpring from "@/assets/withSpring.png";
-import withCover from "@/assets/withCover.png";
-// import withZatvor from "@/assets/withZatvor.png";
-import { DraggableMagazine } from "./DraggableMagazine";
-import { DraggableSpring } from "./DraggableSpring";
-import { DraggableCover } from "./DraggableCover";
 import { Button, Col, Row } from "react-bootstrap";
-import { KeenSliderPlugin, useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
-import Link from "next/link";
 import router from "next/router";
+import Image from "next/image";
+import { DndContext } from "@dnd-kit/core";
+
+import { Droppable } from "@/components/Droppable";
+import { Draggable } from "@/components/Draggable";
+
+import zero from "@/assets/AK47/empty.png";
+import first from "@/assets/AK47/shutter.png";
+import second from "@/assets/AK47/shutterSpring.png";
+import third from "@/assets/AK47/shutterSpringCover.png";
+import fourth from "@/assets/AK47/shutterSpringCoverMagazine.png";
+import fifth from "@/assets/AK47/fullAssembled.png";
+
+import magazine from "@/assets/Details/magazineDetail.png";
+import shutter from "@/assets/Details/shutterDetail.png";
+import spring from "@/assets/Details/springDetail.png";
+import cover from "@/assets/Details/сoverDetail.png";
+import butt from "@/assets/Details/buttDetail.png";
+
+export let details = [
+  { id: "draggableMagazine", name: "magazine", img: magazine },
+  { id: "draggableShutter", name: "shutter", img: shutter },
+  { id: "draggableSpring", name: "spring", img: spring },
+  { id: "draggableCover", name: "cover", img: cover },
+  { id: "draggableButt", name: "butt", img: butt },
+];
 
 export default function Box() {
   enum AssemblyStage {
-    emptyBox,
+    empty,
     sutter,
-    magazine,
     spring,
     cover,
+    magazine,
+    butt,
   }
-  const [assemblyStage, setAssemblyStage] = useState<AssemblyStage>(AssemblyStage.emptyBox);
+  const [arr, setArr] = useState<any[]>([]);
+  const [assemblyStage, setAssemblyStage] = useState<AssemblyStage>(AssemblyStage.empty);
+
   useEffect(() => {
-    console.log("assemblyStage", assemblyStage);
-    // console.log("isDroppedShutter", isDroppedShutter);
+    // console.log("assemblyStage", assemblyStage);
+    console.log(arr);
+    setArr(details);
   }, []);
 
-  const [ref] = useKeenSlider<HTMLDivElement>({
-    loop: true,
-    mode: "free-snap",
-    slides: {
-      perView: 4,
-      spacing: 15,
-    },
-  });
-
+  console.log(arr);
+  const onReload = () => {
+    setAssemblyStage(AssemblyStage.empty);
+    setArr(details);
+  };
   return (
     <DndContext onDragEnd={handleDragEnd}>
       <Droppable>
-        {assemblyStage === AssemblyStage.emptyBox && <Image src={box} style={{ maxHeight: "300px", width: "auto" }} alt="" />}
-        {assemblyStage === AssemblyStage.sutter && <Image src={withZatvor} style={{ maxHeight: "300px", width: "auto" }} alt="" />}
-        {assemblyStage === AssemblyStage.magazine && <Image src={withMagazine} style={{ maxHeight: "300px", width: "auto" }} alt="" />}
-
-        {assemblyStage === AssemblyStage.spring && <Image src={withSpring} style={{ maxHeight: "300px", width: "auto" }} alt="" />}
-        {assemblyStage === AssemblyStage.cover && <Image src={withCover} style={{ maxHeight: "300px", width: "auto" }} alt="" />}
-
-        {/* {isDropped ? <Image src={withZatvor} width={800} height={500} alt="" /> : <Image src={box} width={800} height={500} alt="" />}
-
-        {isDropped ? <Image src={withZatvor} width={800} height={500} alt="" /> : <Image src={box} width={800} height={500} alt="" />}
-
-        {isDropped ? <Image src={withZatvor} width={800} height={500} alt="" /> : <Image src={box} width={800} height={500} alt="" />} */}
+        {assemblyStage === AssemblyStage.empty && <Image src={zero} style={{ height: "auto", width: "auto" }} alt="" />}
+        {assemblyStage === AssemblyStage.sutter && <Image src={first} style={{ height: "auto", width: "auto" }} alt="" />}
+        {assemblyStage === AssemblyStage.spring && <Image src={second} style={{ height: "auto", width: "auto" }} alt="" />}
+        {assemblyStage === AssemblyStage.cover && <Image src={third} style={{ height: "auto", width: "auto" }} alt="" />}
+        {assemblyStage === AssemblyStage.magazine && <Image src={fourth} style={{ height: "auto", width: "auto" }} alt="" />}
+        {assemblyStage === AssemblyStage.butt && <Image src={fifth} style={{ height: "auto", width: "auto" }} alt="" onClick={onReload} />}
       </Droppable>
       <Row className="my-5">
-        <Col>
-          <DraggableSutter />
-        </Col>
-        <Col>
-          <DraggableSpring />
-        </Col>
-        <Col>
-          <DraggableCover />
-        </Col>
-        <Col>
-          <DraggableMagazine />
-        </Col>
+        {arr.map((item) => (
+          <Col key={item.id}>
+            <Draggable {...item} />
+          </Col>
+        ))}
       </Row>
-      {/* <div ref={ref} className="keen-slider" style={{ marginTop: "50px" }}>
-        <div className="keen-slider__slide number-slide1">
-          <DraggableSutter />
-        </div>
-        <div className="keen-slider__slide number-slide2">
-          <DraggableSpring />
-        </div>
-        <div className="keen-slider__slide number-slide3">
-          <DraggableCover />
-        </div>
-        <div className="keen-slider__slide number-slide4">
-          <DraggableMagazine />
-        </div>
-      </div> */}
 
       <div className="text-center">
-        <Button className="w-50 p-3 mb-3" variant="light" onClick={() => setAssemblyStage(AssemblyStage.emptyBox)}>
+        <Button className="w-50 p-2 mb-3" variant="light" onClick={onReload}>
           Сброс
         </Button>
         <br />
-        <Button className="w-25 p-3" onClick={() => router.push("/room")}>
-          Комната
-        </Button>
-        <Button className="w-25 p-3" onClick={() => router.push("/")}>
-          home
-        </Button>
+        <Row>
+          <Col>
+            <Button className="w-25 p-2" onClick={() => router.push("/room")}>
+              Комната
+            </Button>
+          </Col>
+          <Col>
+            {" "}
+            <Button className="w-25 p-2" onClick={() => router.push("/")}>
+              home
+            </Button>
+          </Col>
+        </Row>
       </div>
     </DndContext>
   );
 
   function handleDragEnd(event: any) {
-    if (event.over && event.active && event.active.id === "draggableShutter" && assemblyStage === AssemblyStage.emptyBox) {
+    if (event.over && event.over.id === "droppable" && event.active && event.active.id === "draggableShutter" && assemblyStage === AssemblyStage.empty) {
       setAssemblyStage(AssemblyStage.sutter);
+      setArr(arr.filter((item) => item.id !== "draggableShutter"));
     }
-    if (event.over && event.active && event.active.id === "draggableMagazine" && assemblyStage === AssemblyStage.sutter) {
-      setAssemblyStage(AssemblyStage.magazine);
-    }
-    if (event.over && event.active && event.active.id === "draggableSpring" && assemblyStage === AssemblyStage.magazine) {
+    if (event.over && event.over.id === "droppable" && event.active && event.active.id === "draggableSpring" && assemblyStage === AssemblyStage.sutter) {
       setAssemblyStage(AssemblyStage.spring);
+      setArr(arr.filter((item) => item.id !== "draggableSpring"));
     }
-    if (event.over && event.active && event.active.id === "draggableCover" && assemblyStage === AssemblyStage.spring) {
+    if (event.over && event.over.id === "droppable" && event.active && event.active.id === "draggableCover" && assemblyStage === AssemblyStage.spring) {
       setAssemblyStage(AssemblyStage.cover);
-      alert("Успех!");
+      setArr(arr.filter((item) => item.id !== "draggableCover"));
     }
+    if (event.over && event.over.id === "droppable" && event.active && event.active.id === "draggableMagazine" && assemblyStage === AssemblyStage.cover) {
+      setAssemblyStage(AssemblyStage.magazine);
+      setArr(arr.filter((item) => item.id !== "draggableMagazine"));
+    }
+    if (event.over && event.over.id === "droppable" && event.active && event.active.id === "draggableButt" && assemblyStage === AssemblyStage.magazine) {
+      setAssemblyStage(AssemblyStage.butt);
+      setArr(arr.filter((item) => item.id !== "draggableButt"));
 
+      alert("Успех!");
+    } /* else if (event.over && event.active && event.active.id !== "draggableMagazine" && assemblyStage !== AssemblyStage.butt) {
+      alert("чет не то");
+    } */
     /* else {
       alert("Неправильная последовательность");
     } */
