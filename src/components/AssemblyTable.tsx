@@ -40,38 +40,16 @@ export const details = [
 ];
 
 export default function AssemblyTable() {
-  enum AssemblyStage {
-    empty,
-    one,
-    two,
-    three,
-    fourthfive,
-    six,
-    seven,
-    eight,
-    nine,
-    ten,
-    eleven,
-    twelve,
-    thirteen,
-    fourteen,
-    fifteen,
-  }
   const [det, setDet] = useState<string[]>(["draggableMagazine", "draggableButt", "draggableCover", "draggableSpring", "draggableShutter"]);
   const [activeId, setActiveId] = useState(null);
   const [arr, setArr] = useState<any[]>([]);
-  const [assemblyStage, setAssemblyStage] = useState<AssemblyStage>(AssemblyStage.empty);
-  console.log(arr);
-  console.log("det", det);
+  // console.log(arr);
+  // console.log("det", det);
 
   useEffect(() => {
     setArr(details);
   }, []);
 
-  const onReload = () => {
-    setDet([]);
-    setArr(details);
-  };
   const magazineClicked = () => {
     setDet(det.filter((item) => item !== "draggableMagazine"));
     if (arr.find((item) => item.id === "draggableMagazine")) {
@@ -192,11 +170,6 @@ export default function AssemblyTable() {
           </Col>
         ))}
       </Row>
-      {/* <div className="text-center">
-        <Button onClick={onReload} size={"lg"}>
-          onReload
-        </Button>
-      </div> */}
     </DndContext>
   );
 
