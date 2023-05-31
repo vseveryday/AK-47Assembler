@@ -74,7 +74,7 @@ export default function AssemblyTable() {
   };
   const magazineClicked = () => {
     setDet(det.filter((item) => item !== "draggableMagazine"));
-    if (arr.includes({ id: "draggableMagazine", name: "magazine", img: magazine })) {
+    if (arr.find((item) => item.id === "draggableMagazine")) {
       return;
     } else {
       arr.push({ id: "draggableMagazine", name: "magazine", img: magazine });
@@ -82,7 +82,7 @@ export default function AssemblyTable() {
   };
   const buttClicked = () => {
     setDet(det.filter((item) => item !== "draggableButt"));
-    if (arr.includes({ id: "draggableButt", name: "butt", img: butt })) {
+    if (arr.find((item) => item.id === "draggableButt")) {
       return;
     } else {
       arr.push({ id: "draggableButt", name: "butt", img: butt });
@@ -91,7 +91,7 @@ export default function AssemblyTable() {
   const coverClicked = (e: any) => {
     // e.style.zIndex(10000);
     setDet(det.filter((item) => item !== "draggableCover"));
-    if (arr.includes({ id: "draggableCover", name: "cover", img: cover })) {
+    if (arr.find((item) => item.id === "draggableCover")) {
       return;
     } else {
       arr.push({ id: "draggableCover", name: "cover", img: cover });
@@ -100,7 +100,7 @@ export default function AssemblyTable() {
   const springClicked = (e: any) => {
     // e.style.zIndex(10000);
     setDet(det.filter((item) => item !== "draggableSpring"));
-    if (arr.includes({ id: "draggableSpring", name: "spring", img: spring })) {
+    if (arr.find((item) => item.id === "draggableSpring")) {
       return;
     } else {
       arr.push({ id: "draggableSpring", name: "spring", img: spring });
@@ -108,7 +108,7 @@ export default function AssemblyTable() {
   };
   const shutterClicked = () => {
     setDet(det.filter((item) => item !== "draggableShutter"));
-    if (arr.includes({ id: "draggableShutter", name: "shutter", img: shutter })) {
+    if (arr.find((item) => item.id === "draggableShutter")) {
       return;
     } else {
       arr.push({ id: "draggableShutter", name: "shutter", img: shutter });
@@ -153,23 +153,23 @@ export default function AssemblyTable() {
       <div style={{ position: "absolute", top: "0", width: "1280px", height: "720px" }}>
         <div style={{ position: "relative", width: "1280px", height: "720px" }}>
           <div
-            style={{ position: "absolute", top: "380px", left: "700px", height: "190px", width: "90px", border: "2px solid black", zIndex: "10000", cursor: "pointer" }}
+            style={{ position: "absolute", top: "380px", left: "700px", height: "190px", width: "90px", border: "1px solid black", zIndex: "10000", cursor: "pointer" }}
             onClick={magazineClicked}
           ></div>
           <div
-            style={{ position: "absolute", top: "320px", left: "915px", height: "150px", width: "360px", border: "2px solid black", zIndex: "10000", cursor: "pointer" }}
+            style={{ position: "absolute", top: "320px", left: "915px", height: "150px", width: "360px", border: "1px solid black", zIndex: "10000", cursor: "pointer" }}
             onClick={buttClicked}
           ></div>
           <div
-            style={{ position: "absolute", top: "290px", left: "640px", height: "60px", width: "275px", border: "2px solid black", zIndex: "10003", cursor: "pointer" }}
+            style={{ position: "absolute", top: "335px", left: "740px", height: "25px", width: "170px", border: "1px solid black", zIndex: "10003", cursor: "pointer" }}
             onClick={coverClicked}
           ></div>
           <div
-            style={{ position: "absolute", top: "295px", left: "715px", height: "30px", width: "195px", border: "2px solid black", zIndex: "10002", cursor: "pointer" }}
+            style={{ position: "absolute", top: "310px", left: "740px", height: "25px", width: "170px", border: "1px solid black", zIndex: "10002", cursor: "pointer" }}
             onClick={springClicked}
           ></div>
           <div
-            style={{ position: "absolute", top: "295px", left: "642px", height: "50px", width: "115px", border: "2px solid black", zIndex: "10001", cursor: "pointer" }}
+            style={{ position: "absolute", top: "310px", left: "641px", height: "50px", width: "100px", border: "1px solid black", zIndex: "10001", cursor: "pointer" }}
             onClick={shutterClicked}
           ></div>
         </div>
