@@ -153,23 +153,23 @@ export default function AssemblyTable() {
       <div style={{ position: "absolute", top: "0", width: "1280px", height: "720px" }}>
         <div style={{ position: "relative", width: "1280px", height: "720px" }}>
           <div
-            style={{ position: "absolute", top: "380px", left: "700px", height: "190px", width: "90px", border: "1px solid black", zIndex: "10000", cursor: "pointer" }}
+            style={{ position: "absolute", top: "380px", left: "700px", height: "190px", width: "90px", border: "1px solid transparent", zIndex: "10000", cursor: "pointer" }}
             onClick={magazineClicked}
           ></div>
           <div
-            style={{ position: "absolute", top: "320px", left: "915px", height: "150px", width: "360px", border: "1px solid black", zIndex: "10000", cursor: "pointer" }}
+            style={{ position: "absolute", top: "320px", left: "915px", height: "150px", width: "360px", border: "1px solid transparent", zIndex: "10000", cursor: "pointer" }}
             onClick={buttClicked}
           ></div>
           <div
-            style={{ position: "absolute", top: "335px", left: "740px", height: "25px", width: "170px", border: "1px solid black", zIndex: "10003", cursor: "pointer" }}
+            style={{ position: "absolute", top: "335px", left: "740px", height: "25px", width: "170px", border: "1px solid transparent", zIndex: "10003", cursor: "pointer" }}
             onClick={coverClicked}
           ></div>
           <div
-            style={{ position: "absolute", top: "310px", left: "740px", height: "25px", width: "170px", border: "1px solid black", zIndex: "10002", cursor: "pointer" }}
+            style={{ position: "absolute", top: "310px", left: "740px", height: "25px", width: "170px", border: "1px solid transparent", zIndex: "10002", cursor: "pointer" }}
             onClick={springClicked}
           ></div>
           <div
-            style={{ position: "absolute", top: "310px", left: "641px", height: "50px", width: "100px", border: "1px solid black", zIndex: "10001", cursor: "pointer" }}
+            style={{ position: "absolute", top: "310px", left: "641px", height: "50px", width: "100px", border: "1px solid transparent", zIndex: "10001", cursor: "pointer" }}
             onClick={shutterClicked}
           ></div>
         </div>
