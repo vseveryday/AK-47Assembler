@@ -6,28 +6,28 @@ import { DndContext } from "@dnd-kit/core";
 import { Droppable } from "@/components/Droppable";
 import { Draggable } from "@/components/Draggable";
 
-import empty from "@/assets/AK47/empty.png";
-import shutterSpring from "@/assets/AK47/shutterSpring.png";
-import shutterSpringCoverMagazine from "@/assets/AK47/shutterSpringCoverMagazine.png";
-import shutterSpringCoverButt from "@/assets/AK47/shutterSpringCoverButt.png";
-import shutterSpringMagazineButt from "@/assets/AK47/shutterSpringMagazineButt.png";
-import fullAssembled from "@/assets/AK47/fullAssembled.png";
-import onlyMagazine from "@/assets/AK47/magazine.png";
-import onlyButt from "@/assets/AK47/butt.png";
-import onlyShutter from "@/assets/AK47/shutter.png";
-import magazineButt from "@/assets/AK47/magazineButt.png";
-import shutterMagazine from "@/assets/AK47/shutterMagazine.png";
-import shutterButt from "@/assets/AK47/shutterButt.png";
-import shutterMagazineButt from "@/assets/AK47/shutterMagazineButt.png";
-import shutterSpringCover from "@/assets/AK47/shutterSpringCover.png";
-import shutterSpringMagazine from "@/assets/AK47/shutterSpringMagazine.png";
-import shutterSpringButt from "@/assets/AK47/shutterSpringButt.png";
+import empty from "@/assets/AK47/empty.webp";
+import shutterSpring from "@/assets/AK47/shutterSpring.webp";
+import shutterSpringCoverMagazine from "@/assets/AK47/shutterSpringCoverMagazine.webp";
+import shutterSpringCoverButt from "@/assets/AK47/shutterSpringCoverButt.webp";
+import shutterSpringMagazineButt from "@/assets/AK47/shutterSpringMagazineButt.webp";
+import fullAssembled from "@/assets/AK47/fullAssembled.webp";
+import onlyMagazine from "@/assets/AK47/magazine.webp";
+import onlyButt from "@/assets/AK47/butt.webp";
+import onlyShutter from "@/assets/AK47/shutter.webp";
+import magazineButt from "@/assets/AK47/magazineButt.webp";
+import shutterMagazine from "@/assets/AK47/shutterMagazine.webp";
+import shutterButt from "@/assets/AK47/shutterButt.webp";
+import shutterMagazineButt from "@/assets/AK47/shutterMagazineButt.webp";
+import shutterSpringCover from "@/assets/AK47/shutterSpringCover.webp";
+import shutterSpringMagazine from "@/assets/AK47/shutterSpringMagazine.webp";
+import shutterSpringButt from "@/assets/AK47/shutterSpringButt.webp";
 
-import magazine from "@/assets/Details/magazineDetail.png";
-import shutter from "@/assets/Details/shutterDetail.png";
-import spring from "@/assets/Details/springDetail.png";
-import cover from "@/assets/Details/сoverDetail.png";
-import butt from "@/assets/Details/buttDetail.png";
+import magazine from "@/assets/Details/magazineDetail.webp";
+import shutter from "@/assets/Details/shutterDetail.webp";
+import spring from "@/assets/Details/springDetail.webp";
+import cover from "@/assets/Details/сoverDetail.webp";
+import butt from "@/assets/Details/buttDetail.webp";
 
 export const details = [
   { id: "draggableMagazine", name: "magazine", img: magazine },
@@ -101,37 +101,37 @@ export default function AssemblyTable() {
     <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
       <Droppable>
         {det.length === 0 && <Image src={empty} alt="" />}
-        {det.length === 1 && det.includes("draggableMagazine") && <Image src={onlyMagazine} alt="" />}
-        {det.length === 1 && det.includes("draggableButt") && <Image src={onlyButt} alt="" />}
-        {det.length === 1 && det.includes("draggableShutter") && <Image src={onlyShutter} alt="" />}
+        {det.length === 1 && det.includes("draggableMagazine") && <Image priority src={onlyMagazine} alt="" />}
+        {det.length === 1 && det.includes("draggableButt") && <Image priority src={onlyButt} alt="" />}
+        {det.length === 1 && det.includes("draggableShutter") && <Image priority src={onlyShutter} alt="" />}
 
-        {det.length === 2 && det.includes("draggableShutter") && det.includes("draggableSpring") && <Image src={shutterSpring} alt="" />}
-        {det.length === 2 && det.includes("draggableMagazine") && det.includes("draggableButt") && <Image src={magazineButt} alt="" />}
-        {det.length === 2 && det.includes("draggableShutter") && det.includes("draggableMagazine") && <Image src={shutterMagazine} alt="" />}
-        {det.length === 2 && det.includes("draggableShutter") && det.includes("draggableButt") && <Image src={shutterButt} alt="" />}
+        {det.length === 2 && det.includes("draggableShutter") && det.includes("draggableSpring") && <Image priority src={shutterSpring} alt="" />}
+        {det.length === 2 && det.includes("draggableMagazine") && det.includes("draggableButt") && <Image priority src={magazineButt} alt="" />}
+        {det.length === 2 && det.includes("draggableShutter") && det.includes("draggableMagazine") && <Image priority src={shutterMagazine} alt="" />}
+        {det.length === 2 && det.includes("draggableShutter") && det.includes("draggableButt") && <Image priority src={shutterButt} alt="" />}
 
-        {det.length === 3 && det.includes("draggableShutter") && det.includes("draggableSpring") && det.includes("draggableButt") && <Image src={shutterSpringButt} alt="" />}
+        {det.length === 3 && det.includes("draggableShutter") && det.includes("draggableSpring") && det.includes("draggableButt") && <Image priority src={shutterSpringButt} alt="" />}
 
-        {det.length === 3 && det.includes("draggableShutter") && det.includes("draggableSpring") && det.includes("draggableMagazine") && <Image src={shutterSpringMagazine} alt="" />}
+        {det.length === 3 && det.includes("draggableShutter") && det.includes("draggableSpring") && det.includes("draggableMagazine") && <Image priority src={shutterSpringMagazine} alt="" />}
 
-        {det.length === 3 && det.includes("draggableCover") && det.includes("draggableSpring") && det.includes("draggableMagazine") && <Image src={onlyMagazine} alt="" />}
+        {det.length === 3 && det.includes("draggableCover") && det.includes("draggableSpring") && det.includes("draggableMagazine") && <Image priority src={onlyMagazine} alt="" />}
 
-        {det.length === 3 && det.includes("draggableShutter") && det.includes("draggableMagazine") && det.includes("draggableButt") && <Image src={shutterMagazineButt} alt="" />}
+        {det.length === 3 && det.includes("draggableShutter") && det.includes("draggableMagazine") && det.includes("draggableButt") && <Image priority src={shutterMagazineButt} alt="" />}
 
-        {det.length === 3 && det.includes("draggableShutter") && det.includes("draggableSpring") && det.includes("draggableCover") && <Image src={shutterSpringCover} alt="" />}
+        {det.length === 3 && det.includes("draggableShutter") && det.includes("draggableSpring") && det.includes("draggableCover") && <Image priority src={shutterSpringCover} alt="" />}
 
         {det.length === 4 && det.includes("draggableShutter") && det.includes("draggableSpring") && det.includes("draggableCover") && det.includes("draggableButt") && (
-          <Image src={shutterSpringCoverButt} alt="" />
+          <Image priority src={shutterSpringCoverButt} alt="" />
         )}
 
         {det.length === 4 && det.includes("draggableShutter") && det.includes("draggableSpring") && det.includes("draggableCover") && det.includes("draggableMagazine") && (
-          <Image src={shutterSpringCoverMagazine} alt="" />
+          <Image priority src={shutterSpringCoverMagazine} alt="" />
         )}
 
         {det.length === 4 && det.includes("draggableShutter") && det.includes("draggableSpring") && det.includes("draggableMagazine") && det.includes("draggableButt") && (
-          <Image src={shutterSpringMagazineButt} alt="" />
+          <Image priority src={shutterSpringMagazineButt} alt="" />
         )}
-        {det.length === 5 && <Image src={fullAssembled} alt="" />}
+        {det.length === 5 && <Image priority src={fullAssembled} alt="" />}
       </Droppable>
       <div style={{ position: "absolute", top: "0", width: "1280px", height: "720px" }}>
         <div style={{ position: "relative", width: "1280px", height: "720px" }}>
