@@ -16,9 +16,6 @@ export default function Home() {
           Assembler
         </Button>
         <br />
-        <Button className="w-25 p-3 mt-3" onClick={() => router.push("/table")}>
-          Disassembly
-        </Button>
       </div>
     </>
   );

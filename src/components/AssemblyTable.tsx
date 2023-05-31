@@ -73,23 +73,46 @@ export default function AssemblyTable() {
     setArr(details);
   };
   const magazineClicked = () => {
-    console.log("action");
-
     setDet(det.filter((item) => item !== "draggableMagazine"));
+    if (arr.includes({ id: "draggableMagazine", name: "magazine", img: magazine })) {
+      return;
+    } else {
+      arr.push({ id: "draggableMagazine", name: "magazine", img: magazine });
+    }
   };
   const buttClicked = () => {
     setDet(det.filter((item) => item !== "draggableButt"));
+    if (arr.includes({ id: "draggableButt", name: "butt", img: butt })) {
+      return;
+    } else {
+      arr.push({ id: "draggableButt", name: "butt", img: butt });
+    }
   };
   const coverClicked = (e: any) => {
-    e.style.zIndex(10000);
+    // e.style.zIndex(10000);
     setDet(det.filter((item) => item !== "draggableCover"));
+    if (arr.includes({ id: "draggableCover", name: "cover", img: cover })) {
+      return;
+    } else {
+      arr.push({ id: "draggableCover", name: "cover", img: cover });
+    }
   };
   const springClicked = (e: any) => {
-    e.style.zIndex(10000);
+    // e.style.zIndex(10000);
     setDet(det.filter((item) => item !== "draggableSpring"));
+    if (arr.includes({ id: "draggableSpring", name: "spring", img: spring })) {
+      return;
+    } else {
+      arr.push({ id: "draggableSpring", name: "spring", img: spring });
+    }
   };
   const shutterClicked = () => {
     setDet(det.filter((item) => item !== "draggableShutter"));
+    if (arr.includes({ id: "draggableShutter", name: "shutter", img: shutter })) {
+      return;
+    } else {
+      arr.push({ id: "draggableShutter", name: "shutter", img: shutter });
+    }
   };
   return (
     <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
@@ -151,7 +174,7 @@ export default function AssemblyTable() {
           ></div>
         </div>
       </div>
-      <Row className="my-5">
+      <Row className="my-5 align-items-center">
         {arr.map((item) => (
           <Col key={item.id}>
             <Draggable
