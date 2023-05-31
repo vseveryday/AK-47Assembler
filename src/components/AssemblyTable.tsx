@@ -57,7 +57,7 @@ export default function AssemblyTable() {
     fourteen,
     fifteen,
   }
-  const [det, setDet] = useState<string[]>([]);
+  const [det, setDet] = useState<string[]>(["draggableMagazine", "draggableButt", "draggableCover", "draggableSpring", "draggableShutter"]);
   const [activeId, setActiveId] = useState(null);
   const [arr, setArr] = useState<any[]>([]);
   const [assemblyStage, setAssemblyStage] = useState<AssemblyStage>(AssemblyStage.empty);
