@@ -185,11 +185,11 @@ export default function AssemblyTable() {
           </Col>
         ))}
       </Row>
-      <div className="text-center">
+      {/* <div className="text-center">
         <Button onClick={onReload} size={"lg"}>
           onReload
         </Button>
-      </div>
+      </div> */}
     </DndContext>
   );
 
