@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import { Button, Col, Row } from "react-bootstrap";
-import router from "next/router";
+import { Col, Row } from "react-bootstrap";
 import Image from "next/image";
-import { DndContext, DragOverlay } from "@dnd-kit/core";
-import { restrictToVerticalAxis, restrictToWindowEdges } from "@dnd-kit/modifiers";
+import { DndContext } from "@dnd-kit/core";
 
 import { Droppable } from "@/components/Droppable";
 import { Draggable } from "@/components/Draggable";
@@ -46,9 +44,9 @@ export default function AssemblyTable() {
   // console.log(arr);
   // console.log("det", det);
 
-  useEffect(() => {
-    setArr(details);
-  }, []);
+  // useEffect(() => {
+  //   setArr(details);
+  // }, []);
 
   const magazineClicked = () => {
     setDet(det.filter((item) => item !== "draggableMagazine"));
