@@ -38,11 +38,15 @@ export const details = [
 ];
 
 export default function AssemblyTable() {
-  const [det, setDet] = useState<string[]>(["draggableMagazine", "draggableButt", "draggableCover", "draggableSpring", "draggableShutter"]);
+  const [det, setDet] = useState<string[]>([]);
   const [activeId, setActiveId] = useState(null);
   const [arr, setArr] = useState<any[]>([]);
   // console.log(arr);
   // console.log("det", det);
+
+  useEffect(() => {
+    setArr(details);
+  }, []);
 
   const magazineClicked = () => {
     setDet(det.filter((item) => item !== "draggableMagazine"));
@@ -97,58 +101,169 @@ export default function AssemblyTable() {
     <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
       <Droppable>
         {det.length === 0 && <Image src={empty} alt="" />}
-        {det.length === 1 && det.includes("draggableMagazine") && <Image priority src={onlyMagazine} alt="" />}
-        {det.length === 1 && det.includes("draggableButt") && <Image priority src={onlyButt} alt="" />}
-        {det.length === 1 && det.includes("draggableShutter") && <Image priority src={onlyShutter} alt="" />}
-
-        {det.length === 2 && det.includes("draggableShutter") && det.includes("draggableSpring") && <Image priority src={shutterSpring} alt="" />}
-        {det.length === 2 && det.includes("draggableMagazine") && det.includes("draggableButt") && <Image priority src={magazineButt} alt="" />}
-        {det.length === 2 && det.includes("draggableShutter") && det.includes("draggableMagazine") && <Image priority src={shutterMagazine} alt="" />}
-        {det.length === 2 && det.includes("draggableShutter") && det.includes("draggableButt") && <Image priority src={shutterButt} alt="" />}
-
-        {det.length === 3 && det.includes("draggableShutter") && det.includes("draggableSpring") && det.includes("draggableButt") && <Image priority src={shutterSpringButt} alt="" />}
-
-        {det.length === 3 && det.includes("draggableShutter") && det.includes("draggableSpring") && det.includes("draggableMagazine") && <Image priority src={shutterSpringMagazine} alt="" />}
-
-        {det.length === 3 && det.includes("draggableCover") && det.includes("draggableSpring") && det.includes("draggableMagazine") && <Image priority src={onlyMagazine} alt="" />}
-
-        {det.length === 3 && det.includes("draggableShutter") && det.includes("draggableMagazine") && det.includes("draggableButt") && <Image priority src={shutterMagazineButt} alt="" />}
-
-        {det.length === 3 && det.includes("draggableShutter") && det.includes("draggableSpring") && det.includes("draggableCover") && <Image priority src={shutterSpringCover} alt="" />}
-
-        {det.length === 4 && det.includes("draggableShutter") && det.includes("draggableSpring") && det.includes("draggableCover") && det.includes("draggableButt") && (
-          <Image priority src={shutterSpringCoverButt} alt="" />
+        {det.length === 1 && det.includes("draggableMagazine") && (
+          <Image priority src={onlyMagazine} alt="" />
+        )}
+        {det.length === 1 && det.includes("draggableButt") && (
+          <Image priority src={onlyButt} alt="" />
+        )}
+        {det.length === 1 && det.includes("draggableShutter") && (
+          <Image priority src={onlyShutter} alt="" />
         )}
 
-        {det.length === 4 && det.includes("draggableShutter") && det.includes("draggableSpring") && det.includes("draggableCover") && det.includes("draggableMagazine") && (
-          <Image priority src={shutterSpringCoverMagazine} alt="" />
-        )}
+        {det.length === 2 &&
+          det.includes("draggableShutter") &&
+          det.includes("draggableSpring") && (
+            <Image priority src={shutterSpring} alt="" />
+          )}
+        {det.length === 2 &&
+          det.includes("draggableMagazine") &&
+          det.includes("draggableButt") && (
+            <Image priority src={magazineButt} alt="" />
+          )}
+        {det.length === 2 &&
+          det.includes("draggableShutter") &&
+          det.includes("draggableMagazine") && (
+            <Image priority src={shutterMagazine} alt="" />
+          )}
+        {det.length === 2 &&
+          det.includes("draggableShutter") &&
+          det.includes("draggableButt") && (
+            <Image priority src={shutterButt} alt="" />
+          )}
 
-        {det.length === 4 && det.includes("draggableShutter") && det.includes("draggableSpring") && det.includes("draggableMagazine") && det.includes("draggableButt") && (
-          <Image priority src={shutterSpringMagazineButt} alt="" />
-        )}
+        {det.length === 3 &&
+          det.includes("draggableShutter") &&
+          det.includes("draggableSpring") &&
+          det.includes("draggableButt") && (
+            <Image priority src={shutterSpringButt} alt="" />
+          )}
+
+        {det.length === 3 &&
+          det.includes("draggableShutter") &&
+          det.includes("draggableSpring") &&
+          det.includes("draggableMagazine") && (
+            <Image priority src={shutterSpringMagazine} alt="" />
+          )}
+
+        {det.length === 3 &&
+          det.includes("draggableCover") &&
+          det.includes("draggableSpring") &&
+          det.includes("draggableMagazine") && (
+            <Image priority src={onlyMagazine} alt="" />
+          )}
+
+        {det.length === 3 &&
+          det.includes("draggableShutter") &&
+          det.includes("draggableMagazine") &&
+          det.includes("draggableButt") && (
+            <Image priority src={shutterMagazineButt} alt="" />
+          )}
+
+        {det.length === 3 &&
+          det.includes("draggableShutter") &&
+          det.includes("draggableSpring") &&
+          det.includes("draggableCover") && (
+            <Image priority src={shutterSpringCover} alt="" />
+          )}
+
+        {det.length === 4 &&
+          det.includes("draggableShutter") &&
+          det.includes("draggableSpring") &&
+          det.includes("draggableCover") &&
+          det.includes("draggableButt") && (
+            <Image priority src={shutterSpringCoverButt} alt="" />
+          )}
+
+        {det.length === 4 &&
+          det.includes("draggableShutter") &&
+          det.includes("draggableSpring") &&
+          det.includes("draggableCover") &&
+          det.includes("draggableMagazine") && (
+            <Image priority src={shutterSpringCoverMagazine} alt="" />
+          )}
+
+        {det.length === 4 &&
+          det.includes("draggableShutter") &&
+          det.includes("draggableSpring") &&
+          det.includes("draggableMagazine") &&
+          det.includes("draggableButt") && (
+            <Image priority src={shutterSpringMagazineButt} alt="" />
+          )}
         {det.length === 5 && <Image priority src={fullAssembled} alt="" />}
       </Droppable>
-      <div style={{ position: "absolute", top: "0", width: "1280px", height: "720px" }}>
+      <div
+        style={{
+          position: "absolute",
+          top: "0",
+          width: "1280px",
+          height: "720px",
+        }}
+      >
         <div style={{ position: "relative", width: "1280px", height: "720px" }}>
           <div
-            style={{ position: "absolute", top: "380px", left: "700px", height: "190px", width: "90px", border: "0px solid transparent", zIndex: "10000", cursor: "pointer" }}
+            style={{
+              position: "absolute",
+              top: "380px",
+              left: "700px",
+              height: "190px",
+              width: "90px",
+              border: "0px solid transparent",
+              zIndex: "10000",
+              cursor: "pointer",
+            }}
             onClick={magazineClicked}
           ></div>
           <div
-            style={{ position: "absolute", top: "320px", left: "915px", height: "150px", width: "360px", border: "0px solid transparent", zIndex: "10000", cursor: "pointer" }}
+            style={{
+              position: "absolute",
+              top: "320px",
+              left: "915px",
+              height: "150px",
+              width: "360px",
+              border: "0px solid transparent",
+              zIndex: "10000",
+              cursor: "pointer",
+            }}
             onClick={buttClicked}
           ></div>
           <div
-            style={{ position: "absolute", top: "335px", left: "740px", height: "25px", width: "170px", border: "0px solid transparent", zIndex: "10003", cursor: "pointer" }}
+            style={{
+              position: "absolute",
+              top: "335px",
+              left: "740px",
+              height: "25px",
+              width: "170px",
+              border: "0px solid transparent",
+              zIndex: "10003",
+              cursor: "pointer",
+            }}
             onClick={coverClicked}
           ></div>
           <div
-            style={{ position: "absolute", top: "310px", left: "740px", height: "25px", width: "170px", border: "0px solid transparent", zIndex: "10002", cursor: "pointer" }}
+            style={{
+              position: "absolute",
+              top: "310px",
+              left: "740px",
+              height: "25px",
+              width: "170px",
+              border: "0px solid transparent",
+              zIndex: "10002",
+              cursor: "pointer",
+            }}
             onClick={springClicked}
           ></div>
           <div
-            style={{ position: "absolute", top: "310px", left: "641px", height: "50px", width: "100px", border: "0px solid transparent", zIndex: "10001", cursor: "pointer" }}
+            style={{
+              position: "absolute",
+              top: "310px",
+              left: "641px",
+              height: "50px",
+              width: "100px",
+              border: "0px solid transparent",
+              zIndex: "10001",
+              cursor: "pointer",
+            }}
             onClick={shutterClicked}
           ></div>
         </div>
@@ -159,7 +274,20 @@ export default function AssemblyTable() {
             <Draggable
               id={item.id}
               name={item.name}
-              child={<Image src={item.img} width={200} height={200} style={{ width: "auto", height: "auto", maxHeight: 150, zIndex: 2000 }} alt={item.name} />}
+              child={
+                <Image
+                  src={item.img}
+                  width={200}
+                  height={200}
+                  style={{
+                    width: "auto",
+                    height: "auto",
+                    maxHeight: 150,
+                    zIndex: 2000,
+                  }}
+                  alt={item.name}
+                />
+              }
             />
           </Col>
         ))}
@@ -174,25 +302,50 @@ export default function AssemblyTable() {
   function handleDragEnd(event: any) {
     setActiveId(null);
     const { over } = event;
-    if (over && over.id === "droppable" && event.active && event.active.id === "draggableMagazine") {
+    if (
+      over &&
+      over.id === "droppable" &&
+      event.active &&
+      event.active.id === "draggableMagazine"
+    ) {
       det.push(event.active.id);
       setArr(arr.filter((item) => item.id !== event.active.id));
     }
-    if (over && over.id === "droppable" && event.active && event.active.id === "draggableButt") {
+    if (
+      over &&
+      over.id === "droppable" &&
+      event.active &&
+      event.active.id === "draggableButt"
+    ) {
       det.push(event.active.id);
       setArr(arr.filter((item) => item.id !== event.active.id));
     }
-    if (over && over.id === "droppable" && event.active && event.active.id === "draggableShutter") {
+    if (
+      over &&
+      over.id === "droppable" &&
+      event.active &&
+      event.active.id === "draggableShutter"
+    ) {
       det.push(event.active.id);
       setArr(arr.filter((item) => item.id !== event.active.id));
     }
-    if (over && over.id === "droppable" && event.active && event.active.id === "draggableSpring") {
+    if (
+      over &&
+      over.id === "droppable" &&
+      event.active &&
+      event.active.id === "draggableSpring"
+    ) {
       if (det.includes("draggableShutter")) {
         det.push(event.active.id);
         setArr(arr.filter((item) => item.id !== event.active.id));
       }
     }
-    if (over && over.id === "droppable" && event.active && event.active.id === "draggableCover") {
+    if (
+      over &&
+      over.id === "droppable" &&
+      event.active &&
+      event.active.id === "draggableCover"
+    ) {
       if (det.includes("draggableSpring")) {
         det.push(event.active.id);
         setArr(arr.filter((item) => item.id !== event.active.id));
