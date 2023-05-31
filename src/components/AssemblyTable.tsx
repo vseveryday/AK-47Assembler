@@ -44,10 +44,6 @@ export default function AssemblyTable() {
   // console.log(arr);
   // console.log("det", det);
 
-  // useEffect(() => {
-  //   setArr(details);
-  // }, []);
-
   const magazineClicked = () => {
     setDet(det.filter((item) => item !== "draggableMagazine"));
     if (arr.find((item) => item.id === "draggableMagazine")) {
