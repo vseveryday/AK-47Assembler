@@ -98,8 +98,11 @@ export default function AssemblyTable() {
     }
   };
   const springClicked = (e: any) => {
-    // e.style.zIndex(10000);
-    setDet(det.filter((item) => item !== "draggableSpring"));
+    if (det.find((item) => item === "draggableCover")) {
+      return;
+    } else {
+      setDet(det.filter((item) => item !== "draggableSpring"));
+    }
     if (arr.find((item) => item.id === "draggableSpring")) {
       return;
     } else {
@@ -107,7 +110,11 @@ export default function AssemblyTable() {
     }
   };
   const shutterClicked = () => {
-    setDet(det.filter((item) => item !== "draggableShutter"));
+    if (det.find((item) => item === "draggableSpring")) {
+      return;
+    } else {
+      setDet(det.filter((item) => item !== "draggableShutter"));
+    }
     if (arr.find((item) => item.id === "draggableShutter")) {
       return;
     } else {
