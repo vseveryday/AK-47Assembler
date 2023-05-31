@@ -15,9 +15,9 @@ export function Droppable(props: any, { magazineClickedCallback, buttClickedCall
     id: "droppable",
   });
   const style = {
-    position: "fixed",
+    // position: "fixed",
     color: isOver ? "green" : undefined,
-    top: "0px",
+    // top: "0px",
   };
   const magazineClicked = () => {
     magazineClickedCallback();
