@@ -1,7 +1,5 @@
 import React from "react";
-import { DragOverlay, useDraggable } from "@dnd-kit/core";
-import styles from "@/styles/draggable.module.css";
-import Image from "next/image";
+import { useDraggable } from "@dnd-kit/core";
 
 export interface DraggableProps {
   id: string;

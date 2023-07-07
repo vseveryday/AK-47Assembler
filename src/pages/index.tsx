@@ -12,10 +12,10 @@ export default function Home() {
         <title>Home</title>
       </Head>
       <div style={{ height: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-        <Button className="w-25 p-3 mt-5" onClick={() => router.push("/table")}>
+        <Button className=" p-3 mt-5" onClick={() => router.push("/table")}>
           Assembler
         </Button>
-        <Button className="w-25 p-3 mt-5" onClick={() => router.push("/ags3Dpage")}>
+        <Button className=" p-3 mt-5" onClick={() => router.push("https://ags-17.vercel.app/")}>
           ags3Dpage
         </Button>{" "}
         <br />
