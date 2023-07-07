@@ -65,6 +65,7 @@
   display: flex;
 }
 .detail_wrapper {
+  touch-action: none;
 }
 .detail {
   height: auto;
