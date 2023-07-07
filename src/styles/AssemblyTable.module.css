@@ -14,18 +14,18 @@
 .complete_magazine {
   /* border: 1px rgb(106, 255, 0) solid; */
   position: absolute;
-  top: 56%;
-  left: 53%;
+  top: 45%;
+  left: 42%;
   width: 10%;
-  height: 30%;
+  height: 26%;
   z-index: 10000;
   cursor: pointer;
 }
 .complete_butt {
   /* border: 1px red solid; */
   position: absolute;
-  top: 47%;
-  right: 0%;
+  top: 36%;
+  right: 11%;
   width: 28%;
   height: 22%;
   z-index: 10000;
@@ -34,18 +34,18 @@
 .complete_cover {
   /* border: 1px rgb(111, 0, 255) solid; */
   position: absolute;
-  top: 47%;
-  left: 58%;
+  top: 35%;
+  left: 47%;
   width: 14%;
-  height: 3%;
+  height: 4%;
   z-index: 10003;
   cursor: pointer;
 }
 .complete_spring {
   /* border: 1px rgb(0, 247, 255) solid; */
   position: absolute;
-  top: 43.5%;
-  left: 58%;
+  top: 31.5%;
+  left: 47%;
   width: 14%;
   height: 3.5%;
   z-index: 10002;
@@ -54,15 +54,39 @@
 .complete_shutter {
   /* border: 1px red solid; */
   position: absolute;
-  top: 43.5%;
-  left: 50%;
+  top: 31.5%;
+  left: 39%;
   width: 8%;
-  height: 6.5%;
+  height: 7.5%;
   z-index: 10001;
   cursor: pointer;
 }
-.details {
+.details_list {
+  display: flex;
+}
+.detail_wrapper {
+}
+.detail {
   height: auto;
-  width: calc(var(--index) * 10);
+  max-width: 200px;
   z-index: 2000;
+}
+@media (max-width: 992px) {
+  .details_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 576px) {
+  .details_list {
+    padding: 5vh 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .detail {
+    max-height: 70px;
+    width: auto;
+    z-index: 2000;
+  }
 }

@@ -144,13 +144,13 @@ export default function AssemblyTable() {
         </div>
       </Droppable>
 
-      <Row className="my-5 align-items-center">
+      <div className={styles.details_list}>
         {arr.map((item) => (
-          <Col key={item.id}>
-            <Draggable id={item.id} name={item.name} child={<Image src={item.img} width={200} height={200} className={styles.details} alt={item.name} />} />
-          </Col>
+          <div key={item.id} className={styles.detail_wrapper}>
+            <Draggable id={item.id} name={item.name} child={<Image src={item.img} className={styles.detail} alt={item.name} />} />
+          </div>
         ))}
-      </Row>
+      </div>
     </DndContext>
   );
 

@@ -19,7 +19,7 @@ export function Draggable({ child, id }: DraggableProps) {
 
   return (
     <>
-      <div ref={setNodeRef} className="text-center" style={style} {...listeners} {...attributes}>
+      <div ref={setNodeRef} style={style} {...listeners} {...attributes}>
         {child}
       </div>
     </>
