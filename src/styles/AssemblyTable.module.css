@@ -14,7 +14,7 @@
 }
 
 .complete_magazine {
-  border: 1px rgb(106, 255, 0) solid;
+  /* border: 1px rgb(106, 255, 0) solid; */
   position: absolute;
   top: 56%;
   left: 53%;
@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 .complete_butt {
-  border: 1px red solid;
+  /* border: 1px red solid; */
   position: absolute;
   top: 47%;
   right: 0%;
@@ -34,7 +34,7 @@
   cursor: pointer;
 }
 .complete_cover {
-  border: 1px rgb(111, 0, 255) solid;
+  /* border: 1px rgb(111, 0, 255) solid; */
   position: absolute;
   top: 47%;
   left: 58%;
@@ -44,7 +44,7 @@
   cursor: pointer;
 }
 .complete_spring {
-  border: 1px rgb(0, 247, 255) solid;
+  /* border: 1px rgb(0, 247, 255) solid; */
   position: absolute;
   top: 43.5%;
   left: 58%;
@@ -54,7 +54,7 @@
   cursor: pointer;
 }
 .complete_shutter {
-  border: 1px red solid;
+  /* border: 1px red solid; */
   position: absolute;
   top: 43.5%;
   left: 50%;
