@@ -1,13 +1,11 @@
 .table {
   height: 100vh;
   background: no-repeat url(/img/table.webp);
-  /* background-size: ; */
   position: relative;
   background-position: center;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 }

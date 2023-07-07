@@ -29,7 +29,7 @@ export const details = [
   { id: "draggableButt", name: "butt", img: butt },
 ];
 
-export default function Box() {
+export default function OldVersion() {
   enum AssemblyStage {
     empty,
     sutter,

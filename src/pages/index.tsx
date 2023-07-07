@@ -1,4 +1,4 @@
-import Box from "@/components/Box";
+import Box from "@/components/OldVersion";
 import Head from "next/head";
 import Link from "next/link";
 import router from "next/router";
@@ -15,6 +15,9 @@ export default function Home() {
         <Button className="w-25 p-3 mt-5" onClick={() => router.push("/table")}>
           Assembler
         </Button>
+        <Button className="w-25 p-3 mt-5" onClick={() => router.push("/ags3Dpage")}>
+          ags3Dpage
+        </Button>{" "}
         <br />
       </div>
     </>
