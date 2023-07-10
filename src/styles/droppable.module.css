@@ -3,6 +3,10 @@
   justify-content: center;
   position: relative;
   top: 0;
+  width: auto;
+  min-width: auto;
+  max-height: 50vh;
+  margin: 10vh 0;
 }
 .droppable img {
   z-index: 1;
